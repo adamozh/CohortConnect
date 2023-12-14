@@ -16,7 +16,7 @@ title: User Guide
 
 CohortConnect is an advanced desktop address book which facilitates networking among Computer Science (CS) students. It is optimized for use via a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). 
 
-With advanced features for managing large groups of contacts, CohortConnect is intended for use in a university setting. At the start of the semester, professors will distribute `csv` or `json` files containing a list of students. Instantly load them into CohortConnect with a single **Import** command. With data collected from students before the semester, our **Find A Buddy** feature helps you find potential groupmates by leveraging GitHub’s metadata using a proprietary algorithm. In the **Events** tab, you can identify events and hackathons that your peers will be attending.
+With advanced features for managing large groups of contacts, CohortConnect is intended for use in a university setting. At the start of the semester, professors will distribute `CSV` or `JSON` files containing a list of students. Instantly load them into CohortConnect with a single **Import** command. With data collected from students before the semester, our **Find A Buddy** feature helps you find potential groupmates by leveraging GitHub’s metadata using a proprietary algorithm. In the **Events** tab, you can identify events and hackathons that your peers will be attending.
 
 ## Table of Contents
 * Table of Contents
@@ -28,7 +28,7 @@ This User Guide is intended for basic to advanced users of CohortConnect. It pro
 
 ## Prerequisites
 
-1. Basic knowledge about `csv` and `json` type file formats.
+1. Basic knowledge about `CSV` and `JSON` type file formats.
 2. Basic knowledge about Technical Terms like `CLI`, `UI` and `JAR`.
 3. `Java 11` Installed on the System.
 
@@ -92,9 +92,9 @@ This User Guide is intended for basic to advanced users of CohortConnect. It pro
 ![User Interface](images/UiLabelled.png)
 
 1. **Menu Bar**: Contains links and keyboard shortcuts for navigating to other UI components.
-2. **Profile Window**: Opens the Profile Window, where users can see the details they have entered during profile set up.
-3. **Events Icon**: Switches to the events tab.
-4. **Command Box**: A text field for users to enter their commands and view previous commands command-line style.
+2. **Profile Window**: Opens the Profile Window, where you can see your profile details entered during set up.
+3. **Events Icon**: Switches to the Events tab.
+4. **Command Box**: A text field to enter their commands and view previous commands command-line style.
 5. **Result Box**: Displays the results of commands entered into the Command Box.
 6. **Tab Switcher**: Shows all tabs, highlights the current tab, and switches between tabs by clicking or keyboard shortcuts.
 7. **Contact List**: Shows all contacts in a scrollable list.
@@ -180,7 +180,6 @@ edit 1 n/John te/john_123 t/TA
 
 Edits the Profile linked to the Address Book.
 
-
 Format:
 
 ```
@@ -213,11 +212,11 @@ edit profile [n/<NAME>] [te/<TELEGRAM>] [g/<GITHUB>]
 
 </div>
 
-* Edits name, Telegram and GitHub fields of user's profile.
+* Edits the name, Telegram and GitHub fields of your profile.
 * If the prefix of the field to be edited is mentioned, then its parameters cannot be left empty.
 E.g. `edit profile te/` and `edit profile n/Bob te/` would result in an error because the updated Telegram handle 
 has not been specified. 
-* If multiple prefixes are missing parameters, then the user is notified of the first missing parameter.
+* If multiple prefixes are missing parameters, CohortConnect will notify you of the first missing parameter.
 E.g. `edit profile n/ te/` would result in an error saying that the name to be edited is missing.
 
 Examples:
@@ -389,9 +388,13 @@ show 4
 
 ### Exporting Student Contacts - `export`
 
-Exports the Student Contacts to the specified JSON or CSV file. Exported file will be in the same folder as the application.
+You can export your entire address book to a specified `JSON` or `CSV` file. This can be used to share contacts with others, or to store contacts in an external format. 
 
-Exporting will not overwrite existing files.
+<div markdown="span" class="alert alert-primary">
+:bulb: TIP: `CSV` files can be opened and edited with Excel.
+</div>
+
+The exported file will be in the same folder as the application. Exporting will not overwrite existing files.
 
 Format 1:
 
@@ -419,9 +422,13 @@ export Friends.csv
 
 ### Importing Student Contacts - `import`
 
-Imports Student Contacts from the specified JSON or CSV file. File must be in the same folder as the application.
+You can import contacts from a specified `JSON` or `CSV` file, saving you the hassle of adding contacts individually. This can be used to load the module contacts provided at the start of the semester, or any other contacts shared with you.
 
-Importing will not remove existing contacts, and ignores duplicate contacts.
+<div markdown="span" class="alert alert-primary">
+:bulb: TIP: `CSV` files can be opened and edited with Excel.
+</div>
+
+The import file must be in the same folder as the application. Importing will not remove existing contacts, and ignores duplicate contacts.
 
 Format 1:
 
@@ -449,7 +456,7 @@ import CS2103T.csv
 
 ### Setting a Contact as Favorite - `fav`
 
-Helps to set a particular Student Contact as a Favorite only if the contact has not been favorited.
+Sets a particular Student Contact as a Favorite, only if the contact has not been favorited.
 
 Format:
 
@@ -465,7 +472,7 @@ fav 1
 
 ### Setting a Contact as Unfavorite - `unfav`
 
-Helps to set a particular Student Contact as an Unfavorite only if the contact has been favorited.
+Sets a particular Student Contact as an Unfavorite, only if the contact has been favorited.
 
 Format:
 
@@ -481,7 +488,7 @@ unfav 1
 
 ### Adding or removing tags from a contact - `tag`
 
-Allows user to directly add or remove tag(s) from a specific student contact.
+Directly adds or removes tag(s) from a specific student contact.
 
 Format:
 
@@ -495,7 +502,7 @@ tag <INDEX> a/<TAG_TO_ADD> [MORE_TAGS] r/<TAG_TO_REMOVE> [MORE_TAGS]
 <br/>
 • Index cannot be left blank, must be a positive integer and be specified after the `tag` keyword.<br>
 • To add or remove an event or module type tag, specify the tag type before the name of the tag. E.g. `tag 2 a/event-hackathon` (to add an event tag) or `tag 2 a/module-CS2103T` (to add a module tag) and likewise for remove. Tags specified without valid type before the name will be considered as general tags.<br>
-• Users can choose to only add tag(s), only remove tag(s) or add tag(s) and remove tag(s)
+• You can choose to only add tag(s), only remove tag(s) or add tag(s) and remove tag(s)
 
 </div>
 
@@ -542,7 +549,7 @@ help
 
 ### Listing All Student Contacts - `list`
 
-Lists all the Student Contacts present.
+Lists all the student contacts in the address book.
 
 Format:
 
@@ -552,7 +559,7 @@ list
 
 ### Deleting All Student Contacts - `clear`
 
-Deletes all the Student Contacts present.
+Deletes all the student contacts present in the address book.
 
 Format:
 
@@ -564,9 +571,13 @@ clear
 :exclamation: DANGER: Use With Caution!
 </div>
 
-### Open Telegram of Current User
+### Open Telegram of Current Contact
 
-Opens the current user's Telegram link in the user's default web browser. If the user has the Telegram application installed on his device, he will be redirected to the application.
+Opens the current contact's Telegram link in your default web browser. If you have Telegram installed on your device, you will be redirected to the application.
+
+<div markdown="span" class="alert alert-primary">
+:bulb: TIP: Select a contact with `show <INDEX>` or `show <NAME>`.
+</div>
 
 Format:
 
@@ -574,9 +585,9 @@ Format:
 te
 ```
 
-### Open GitHub of Current User
+### Open GitHub of Current Contact
 
-Opens the current user's GitHub profile in the user's default web browser.
+Opens the current contact's GitHub profile in your default web browser.
 
 Format:
 
@@ -600,13 +611,13 @@ exit
 
 ## FAQ
 
-Q: On typing and running commands, the error message "XXXX" is shown, what shall I do?
+Q: On typing and running commands, the error message "XXXX" is shown, what should I do?
 
 A: Please **strictly** follow the command format to avoid such issues.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## Command Summary
 
 | Feature | Command(s) |
 | ------ | ------ |
@@ -628,6 +639,8 @@ A: Please **strictly** follow the command format to avoid such issues.
 | Show the Help Window | `help` |
 | Show a Student Contact (by Name)| `show <NAME>` |
 | Show a Student Contact (by Index) | `show <INDEX>` |
+| Show a Student Contact (by Github) | `show g/<GITHUB>` |
+| Show a Student Contact (by Telegram) | `show te/<TELEGRAM>` |
 | To Add Tag(s) | `tag <INDEX> a/<TAG_TO_ADD> [MORE_TAGS]` |
 | To Remove Tag(s) | `tag <INDEX> r/<TAG_TO_REMOVE> [MORE_TAGS]` |
 | To Add and Remove Tag(s) Simultaneously | `tag <INDEX> a/<TAG_TO_ADD> [MORE_TAGS] r/<TAG_TO_REMOVE> [MORE_TAGS]` |
